@@ -1,11 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App.js";
-import "semantic-ui-css/semantic.min.css";
+// Frontend: index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );
